@@ -1,0 +1,431 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC04305AEF319471B8434793 /* Pods_ChatBotDiary2024.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD240A0F334914E2130A20FC /* Pods_ChatBotDiary2024.framework */; };
+		B5ABDABF2C006F41008691F2 /* ChatBotDiary2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABDABE2C006F41008691F2 /* ChatBotDiary2024App.swift */; };
+		B5ABDAC12C006F41008691F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABDAC02C006F41008691F2 /* ContentView.swift */; };
+		B5ABDAC32C006F44008691F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5ABDAC22C006F44008691F2 /* Assets.xcassets */; };
+		B5ABDAC62C006F44008691F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5ABDAC52C006F44008691F2 /* Preview Assets.xcassets */; };
+		B5ABDACD2C048BB5008691F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5ABDACC2C048BB4008691F2 /* GoogleService-Info.plist */; };
+		B5ABDACF2C04913B008691F2 /* UserAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABDACE2C04913B008691F2 /* UserAPIClient.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		66E9753325794D9F532D3383 /* Pods-ChatBotDiary2024.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatBotDiary2024.release.xcconfig"; path = "Target Support Files/Pods-ChatBotDiary2024/Pods-ChatBotDiary2024.release.xcconfig"; sourceTree = "<group>"; };
+		6E2B796C3443A712EC8C54DB /* Pods-ChatBotDiary2024.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatBotDiary2024.debug.xcconfig"; path = "Target Support Files/Pods-ChatBotDiary2024/Pods-ChatBotDiary2024.debug.xcconfig"; sourceTree = "<group>"; };
+		B5ABDABB2C006F41008691F2 /* ChatBotDiary2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatBotDiary2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5ABDABE2C006F41008691F2 /* ChatBotDiary2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotDiary2024App.swift; sourceTree = "<group>"; };
+		B5ABDAC02C006F41008691F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B5ABDAC22C006F44008691F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5ABDAC52C006F44008691F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B5ABDACC2C048BB4008691F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		B5ABDACE2C04913B008691F2 /* UserAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIClient.swift; sourceTree = "<group>"; };
+		FD240A0F334914E2130A20FC /* Pods_ChatBotDiary2024.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatBotDiary2024.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5ABDAB82C006F41008691F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC04305AEF319471B8434793 /* Pods_ChatBotDiary2024.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		782C1EADCAB2AA6E2495A824 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD240A0F334914E2130A20FC /* Pods_ChatBotDiary2024.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9755E71B6F399AD23BCF40EA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6E2B796C3443A712EC8C54DB /* Pods-ChatBotDiary2024.debug.xcconfig */,
+				66E9753325794D9F532D3383 /* Pods-ChatBotDiary2024.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B5ABDAB22C006F41008691F2 = {
+			isa = PBXGroup;
+			children = (
+				B5ABDABD2C006F41008691F2 /* ChatBotDiary2024 */,
+				B5ABDABC2C006F41008691F2 /* Products */,
+				9755E71B6F399AD23BCF40EA /* Pods */,
+				782C1EADCAB2AA6E2495A824 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B5ABDABC2C006F41008691F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5ABDABB2C006F41008691F2 /* ChatBotDiary2024.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5ABDABD2C006F41008691F2 /* ChatBotDiary2024 */ = {
+			isa = PBXGroup;
+			children = (
+				B5ABDABE2C006F41008691F2 /* ChatBotDiary2024App.swift */,
+				B5ABDAC02C006F41008691F2 /* ContentView.swift */,
+				B5ABDACE2C04913B008691F2 /* UserAPIClient.swift */,
+				B5ABDAC22C006F44008691F2 /* Assets.xcassets */,
+				B5ABDACC2C048BB4008691F2 /* GoogleService-Info.plist */,
+				B5ABDAC42C006F44008691F2 /* Preview Content */,
+			);
+			path = ChatBotDiary2024;
+			sourceTree = "<group>";
+		};
+		B5ABDAC42C006F44008691F2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B5ABDAC52C006F44008691F2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B5ABDABA2C006F41008691F2 /* ChatBotDiary2024 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5ABDAC92C006F44008691F2 /* Build configuration list for PBXNativeTarget "ChatBotDiary2024" */;
+			buildPhases = (
+				AD17EA1375A1978048FBFBA5 /* [CP] Check Pods Manifest.lock */,
+				B5ABDAB72C006F41008691F2 /* Sources */,
+				B5ABDAB82C006F41008691F2 /* Frameworks */,
+				B5ABDAB92C006F41008691F2 /* Resources */,
+				588DB96F7AAEE71A70280693 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChatBotDiary2024;
+			productName = ChatBotDiary2024;
+			productReference = B5ABDABB2C006F41008691F2 /* ChatBotDiary2024.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B5ABDAB32C006F41008691F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					B5ABDABA2C006F41008691F2 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = B5ABDAB62C006F41008691F2 /* Build configuration list for PBXProject "ChatBotDiary2024" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B5ABDAB22C006F41008691F2;
+			productRefGroup = B5ABDABC2C006F41008691F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B5ABDABA2C006F41008691F2 /* ChatBotDiary2024 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5ABDAB92C006F41008691F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5ABDAC62C006F44008691F2 /* Preview Assets.xcassets in Resources */,
+				B5ABDAC32C006F44008691F2 /* Assets.xcassets in Resources */,
+				B5ABDACD2C048BB5008691F2 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		588DB96F7AAEE71A70280693 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChatBotDiary2024/Pods-ChatBotDiary2024-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChatBotDiary2024/Pods-ChatBotDiary2024-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChatBotDiary2024/Pods-ChatBotDiary2024-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD17EA1375A1978048FBFBA5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChatBotDiary2024-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5ABDAB72C006F41008691F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5ABDAC12C006F41008691F2 /* ContentView.swift in Sources */,
+				B5ABDACF2C04913B008691F2 /* UserAPIClient.swift in Sources */,
+				B5ABDABF2C006F41008691F2 /* ChatBotDiary2024App.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B5ABDAC72C006F44008691F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B5ABDAC82C006F44008691F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B5ABDACA2C006F44008691F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E2B796C3443A712EC8C54DB /* Pods-ChatBotDiary2024.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ChatBotDiary2024/Preview Content\"";
+				DEVELOPMENT_TEAM = 274CZPH4P8;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ChatBotDiary2024;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B5ABDACB2C006F44008691F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66E9753325794D9F532D3383 /* Pods-ChatBotDiary2024.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ChatBotDiary2024/Preview Content\"";
+				DEVELOPMENT_TEAM = 274CZPH4P8;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ChatBotDiary2024;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B5ABDAB62C006F41008691F2 /* Build configuration list for PBXProject "ChatBotDiary2024" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5ABDAC72C006F44008691F2 /* Debug */,
+				B5ABDAC82C006F44008691F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5ABDAC92C006F44008691F2 /* Build configuration list for PBXNativeTarget "ChatBotDiary2024" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5ABDACA2C006F44008691F2 /* Debug */,
+				B5ABDACB2C006F44008691F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B5ABDAB32C006F41008691F2 /* Project object */;
+}
