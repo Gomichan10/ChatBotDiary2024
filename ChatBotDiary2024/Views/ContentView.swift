@@ -9,13 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     
+    enum ButtonState {
+        case normal
+        case loading
+        case completed
+    }
     
     @State var sheet: Bool = false
     @State var email: String = ""
     @State var pass: String = ""
-    @State var buttonState: Bool = false
+    @State var buttonState: ButtonState = .normal
+    @State var isLarge: Bool = false
     
     var body: some View {
+        //背景とタイトル
         ZStack {
             Image("Diary")
                 .resizable()
@@ -49,6 +56,7 @@ struct ContentView: View {
 
 extension ContentView {
     
+    //ログインボタン
     var loginButton: some View {
         VStack {
             Button(
@@ -96,7 +104,7 @@ extension ContentView {
         }
     }
     
-    
+    //サインインボタン
     var signInButton: some View {
         Button(
             action: {
@@ -125,26 +133,41 @@ extension ContentView {
                         .cornerRadius(6)
                     
                     Button {
-                        buttonState.toggle()
+                        switch buttonState {
+                        case .normal:
+                            buttonState = .loading
+                            if !email.isEmpty || !pass.isEmpty {
+                                
+                            }
+                        case.loading:
+                            break
+                        case .completed:
+                            break
+                        }
                     } label: {
-                        if buttonState {
+                        switch buttonState {
+                        case .normal:
+                            Image(systemName: "arrow.right.circle")
+                                .resizable()
+                                .frame(width: 70, height: 70)
+                                .foregroundColor(.gray)
+                                .padding(.top, 50)
+                        case .loading:
                             ZStack {
                                 Circle()
                                     .stroke(Color.gray, style: StrokeStyle(lineWidth: 6))
                                     .frame(width: 60, height: 60)
                                 ProgressView()
                                     .scaleEffect(x: 2, y: 2)
-                                    
                             }
                             .padding(.top, 50)
-                        } else {
-                            Image(systemName: "arrow.right.circle")
+                        case .completed:
+                            Image(systemName: "checkmark.circle")
                                 .resizable()
                                 .frame(width: 70, height: 70)
-                                .foregroundColor(.gray)
+                                .foregroundColor(.green)
                                 .padding(.top, 50)
                         }
-                        
                     }
                 }
                 .navigationTitle("新規アカウント作成")
