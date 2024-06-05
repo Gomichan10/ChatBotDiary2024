@@ -10,6 +10,7 @@ import FirebaseAuth
 
 class UserAPIClient {
     
+    //アカウント作成メソッド
     func createUser(email: String, password: String, completion: @escaping (Bool) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
             if let error = error {
