@@ -14,6 +14,9 @@
 		B5ABDAC62C006F44008691F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5ABDAC52C006F44008691F2 /* Preview Assets.xcassets */; };
 		B5ABDACD2C048BB5008691F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5ABDACC2C048BB4008691F2 /* GoogleService-Info.plist */; };
 		B5ABDACF2C04913B008691F2 /* UserAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABDACE2C04913B008691F2 /* UserAPIClient.swift */; };
+		B5ABDAD82C09D58C008691F2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABDAD72C09D58C008691F2 /* Validation.swift */; };
+		B5DDC11A2C10713500F3E4A6 /* FirestoreAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDC1192C10713500F3E4A6 /* FirestoreAPIClient.swift */; };
+		B5DDC11F2C10736000F3E4A6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDC11E2C10736000F3E4A6 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		B5ABDAC52C006F44008691F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B5ABDACC2C048BB4008691F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B5ABDACE2C04913B008691F2 /* UserAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIClient.swift; sourceTree = "<group>"; };
+		B5ABDAD72C09D58C008691F2 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		B5DDC1192C10713500F3E4A6 /* FirestoreAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreAPIClient.swift; sourceTree = "<group>"; };
+		B5DDC11E2C10736000F3E4A6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FD240A0F334914E2130A20FC /* Pods_ChatBotDiary2024.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatBotDiary2024.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,8 +86,10 @@
 			isa = PBXGroup;
 			children = (
 				B5ABDABE2C006F41008691F2 /* ChatBotDiary2024App.swift */,
-				B5ABDAC02C006F41008691F2 /* ContentView.swift */,
-				B5ABDACE2C04913B008691F2 /* UserAPIClient.swift */,
+				B5ABDAD52C09D292008691F2 /* Views */,
+				B5DDC11D2C10734500F3E4A6 /* Models */,
+				B5ABDAD42C09D27E008691F2 /* API */,
+				B5ABDAD62C09D2EF008691F2 /* Func */,
 				B5ABDAC22C006F44008691F2 /* Assets.xcassets */,
 				B5ABDACC2C048BB4008691F2 /* GoogleService-Info.plist */,
 				B5ABDAC42C006F44008691F2 /* Preview Content */,
@@ -95,6 +103,39 @@
 				B5ABDAC52C006F44008691F2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B5ABDAD42C09D27E008691F2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B5ABDACE2C04913B008691F2 /* UserAPIClient.swift */,
+				B5DDC1192C10713500F3E4A6 /* FirestoreAPIClient.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B5ABDAD52C09D292008691F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B5ABDAC02C006F41008691F2 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B5ABDAD62C09D2EF008691F2 /* Func */ = {
+			isa = PBXGroup;
+			children = (
+				B5ABDAD72C09D58C008691F2 /* Validation.swift */,
+			);
+			path = Func;
+			sourceTree = "<group>";
+		};
+		B5DDC11D2C10734500F3E4A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B5DDC11E2C10736000F3E4A6 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +255,9 @@
 			files = (
 				B5ABDAC12C006F41008691F2 /* ContentView.swift in Sources */,
 				B5ABDACF2C04913B008691F2 /* UserAPIClient.swift in Sources */,
+				B5DDC11F2C10736000F3E4A6 /* User.swift in Sources */,
+				B5DDC11A2C10713500F3E4A6 /* FirestoreAPIClient.swift in Sources */,
+				B5ABDAD82C09D58C008691F2 /* Validation.swift in Sources */,
 				B5ABDABF2C006F41008691F2 /* ChatBotDiary2024App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
