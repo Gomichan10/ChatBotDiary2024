@@ -13,13 +13,27 @@ struct ContentView: View {
         case normal
         case loading
         case completed
+        case error
+    }
+    
+    enum AlertState {
+        case email
+        case pass
+        case error
+    }
+    
+    struct ColorManager {
+        static let baseColor = Color("white_black")
     }
     
     @State var sheet: Bool = false
     @State var email: String = ""
     @State var pass: String = ""
     @State var buttonState: ButtonState = .normal
+    @State var alertState: AlertState?
     @State var isLarge: Bool = false
+    @State var showAlert: Bool = false
+    
     
     var body: some View {
         //背景とタイトル
@@ -45,6 +59,7 @@ struct ContentView: View {
                     .foregroundColor(.white)
                 Spacer()
                 loginButton
+                signInButton
             }
         }
     }
@@ -99,8 +114,6 @@ extension ContentView {
             .background(Color.white)
             .cornerRadius(.infinity)
             .shadow(radius: 15)
-            
-            signInButton
         }
     }
     
@@ -112,7 +125,7 @@ extension ContentView {
             },
             label: {
                 Text("サインアップ")
-                    .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.65))
+                    .foregroundColor(ColorManager.baseColor.opacity(0.65))
                     .bold()
             })
         .padding()
@@ -126,7 +139,7 @@ extension ContentView {
                         .background(Color(red: 0, green: 0, blue: 0, opacity: 0.07))
                         .cornerRadius(6)
                     
-                    TextField("パスワードを入力", text: $pass)
+                    SecureField("パスワードを入力", text: $pass)
                         .padding()
                         .frame(width: 350, height: 50)
                         .background(Color(red: 0, green: 0, blue: 0, opacity: 0.07))
@@ -136,12 +149,44 @@ extension ContentView {
                         switch buttonState {
                         case .normal:
                             buttonState = .loading
-                            if !email.isEmpty || !pass.isEmpty {
+                            UIApplication.shared.endEditing()
+                            FirestoreAPIClient().searchUser(email: email) { result in
                                 
+                                switch result {
+                                case true:
+                                    if Validation().isValidEmail(email) {
+                                        if Validation().isValidPassword(pass) {
+                                            UserAPIClient().createUser(email: email, password: pass) { result in
+                                                switch result {
+                                                case true:
+                                                    print("Success")
+                                                    buttonState = .completed
+                                                case false:
+                                                    print("Failure")
+                                                }
+                                            }
+                                        } else {
+                                            alertState = .pass
+                                            showAlert = true
+                                            buttonState = .normal
+                                        }
+                                    } else {
+                                        alertState = .email
+                                        showAlert = true
+                                        buttonState = .normal
+                                    }
+                                case false:
+                                    buttonState = .error
+                                    alertState = .error
+                                    showAlert = true
+                                }
                             }
+                            
                         case.loading:
                             break
                         case .completed:
+                            break
+                        case .error:
                             break
                         }
                     } label: {
@@ -167,12 +212,42 @@ extension ContentView {
                                 .frame(width: 70, height: 70)
                                 .foregroundColor(.green)
                                 .padding(.top, 50)
+                        case .error:
+                            Image(systemName: "xmark.circle")
+                                .resizable()
+                                .frame(width: 70, height: 70)
+                                .foregroundColor(.red)
+                                .padding(.top, 50)
                         }
                     }
                 }
                 .navigationTitle("新規アカウント作成")
+                .alert(isPresented: $showAlert) {
+                    switch alertState {
+                    case .email:
+                        return Alert(title: Text("正常なメールアドレスが入力されていません"), message: Text("もう一度メールアドレスを入力し直してください"), dismissButton: .default(Text("OK")))
+                    case .pass:
+                        return Alert(title: Text("正しいパスワードを入力してください"), message: Text ("最低1文字の小文字または大文字を含み、最低1文字以上の数字を含む10文字以上のパスワードを入力してください"), dismissButton: .default(Text("OK")))
+                    case .error:
+                        return Alert(title: Text("すでに登録されているメールアドレスです"), message: Text ("入力されたメールアドレスはすでに登録されています。もう一度入力し直してください。"), dismissButton:.default(Text("OK"), action: { buttonState = .normal }))
+                    case .none:
+                        return Alert(title: Text("エラー"), message: Text("エラーが発生しました"), dismissButton: .default(Text("OK")))
+                    }
+                }
             }
             .presentationDetents([.medium])
         }
     }
 }
+
+extension UIApplication {
+    func endEditing() {
+        sendAction(
+            #selector(UIResponder.resignFirstResponder),
+            to: nil,
+            from: nil,
+            for: nil
+        )
+    }
+}
+
