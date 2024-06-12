@@ -18,6 +18,9 @@
 		B5DDC11A2C10713500F3E4A6 /* FirestoreAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDC1192C10713500F3E4A6 /* FirestoreAPIClient.swift */; };
 		B5DDC11F2C10736000F3E4A6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDC11E2C10736000F3E4A6 /* User.swift */; };
 		B5DDC1232C15DF5700F3E4A6 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDC1222C15DF5700F3E4A6 /* Buttons.swift */; };
+		B5DDC1252C173D3700F3E4A6 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDC1242C173D3700F3E4A6 /* MainTabView.swift */; };
+		B5DDC1272C173D8900F3E4A6 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDC1262C173D8900F3E4A6 /* ChatView.swift */; };
+		B5DDC1292C173DAA00F3E4A6 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDC1282C173DAA00F3E4A6 /* CalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		B5DDC1192C10713500F3E4A6 /* FirestoreAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreAPIClient.swift; sourceTree = "<group>"; };
 		B5DDC11E2C10736000F3E4A6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B5DDC1222C15DF5700F3E4A6 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		B5DDC1242C173D3700F3E4A6 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabView.swift; path = /Users/gomichan/Desktop/ChatBotDiary2024/ChatBotDiary2024/Views/MainTabView.swift; sourceTree = "<absolute>"; };
+		B5DDC1262C173D8900F3E4A6 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		B5DDC1282C173DAA00F3E4A6 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		FD240A0F334914E2130A20FC /* Pods_ChatBotDiary2024.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatBotDiary2024.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -120,6 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				B5ABDAC02C006F41008691F2 /* ContentView.swift */,
+				B5DDC1242C173D3700F3E4A6 /* MainTabView.swift */,
+				B5DDC1262C173D8900F3E4A6 /* ChatView.swift */,
+				B5DDC1282C173DAA00F3E4A6 /* CalendarView.swift */,
 				B5DDC1222C15DF5700F3E4A6 /* Buttons.swift */,
 			);
 			path = Views;
@@ -256,9 +265,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5DDC1292C173DAA00F3E4A6 /* CalendarView.swift in Sources */,
 				B5DDC1232C15DF5700F3E4A6 /* Buttons.swift in Sources */,
 				B5ABDAC12C006F41008691F2 /* ContentView.swift in Sources */,
 				B5ABDACF2C04913B008691F2 /* UserAPIClient.swift in Sources */,
+				B5DDC1252C173D3700F3E4A6 /* MainTabView.swift in Sources */,
+				B5DDC1272C173D8900F3E4A6 /* ChatView.swift in Sources */,
 				B5DDC11F2C10736000F3E4A6 /* User.swift in Sources */,
 				B5DDC11A2C10713500F3E4A6 /* FirestoreAPIClient.swift in Sources */,
 				B5ABDAD82C09D58C008691F2 /* Validation.swift in Sources */,

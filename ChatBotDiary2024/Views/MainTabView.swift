@@ -9,7 +9,18 @@ import SwiftUI
 
 struct MainTabView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            ChatView()
+                .tabItem {
+                    Image(systemName: "bubble.left.and.bubble.right.fill")
+                    Text("チャット")
+                }
+            CalendarView()
+                .tabItem {
+                    Image(systemName: "calendar")
+                    Text("カレンダー")
+                }
+        }
     }
 }
 
