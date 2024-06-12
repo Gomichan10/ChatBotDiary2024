@@ -29,6 +29,7 @@ struct ContentView: View {
         case error
     }
     
+    
     struct ColorManager {
         static let baseColor = Color("white_black")
     }
@@ -45,6 +46,7 @@ struct ContentView: View {
     @State var isLarge: Bool = false
     @State var showLoginAlert: Bool = false
     @State var showSigninAlert: Bool = false
+    @State var showMainTabView: Bool = false
     
     
     var body: some View {
@@ -156,6 +158,9 @@ extension ContentView {
                                 switch result {
                                 case true:
                                     loginButtonState = .completed
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                                        showMainTabView = true
+                                    }
                                 case false:
                                     loginButtonState = .error
                                     showLoginAlert.toggle()
@@ -186,6 +191,9 @@ extension ContentView {
                 .alert(isPresented: $showLoginAlert) {
                     return Alert(title: Text("メールアドレスまたはパスワードが正しくありません"), message: Text("メールアドレスまたはパスワードが正しくありません。もう一度入力し直してください。"), dismissButton: .default(Text("OK"), action: {loginButtonState = .normal}))
                 }
+            }
+            .fullScreenCover(isPresented: $showMainTabView) {
+                MainTabView()
             }
             .presentationDetents([.medium])
         }
