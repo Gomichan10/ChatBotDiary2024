@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct LaunchScreenView: View {
+    
+    @State private var showFirstScreen: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
+            Image("AiDiaryLaunchScreen")
+                .resizable()
+        }
+        .onAppear{
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                ContentView()
+            }
+        }
+        .background(Color(red: 255/255, green: 238/255, blue: 214/255))
+        .fullScreenCover(isPresented: $showFirstScreen) {
+           
+        }
     }
 }
 

@@ -21,6 +21,7 @@ struct MainTabView: View {
                     Text("カレンダー")
                 }
         }
+        .accentColor(Color("BarColor"))
     }
 }
 

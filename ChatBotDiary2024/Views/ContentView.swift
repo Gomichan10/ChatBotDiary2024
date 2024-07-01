@@ -30,10 +30,6 @@ struct ContentView: View {
     }
     
     
-    struct ColorManager {
-        static let baseColor = Color("white_black")
-    }
-    
     @State var signinSheet: Bool = false
     @State var loginSheet: Bool = false
     @State var loginEmail: String = ""
@@ -46,7 +42,7 @@ struct ContentView: View {
     @State var isLarge: Bool = false
     @State var showLoginAlert: Bool = false
     @State var showSigninAlert: Bool = false
-    @State var showMainTabView: Bool = false
+    @State var showChatView: Bool = false
     
     
     var body: some View {
@@ -159,7 +155,7 @@ extension ContentView {
                                 case true:
                                     loginButtonState = .completed
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                                        showMainTabView = true
+                                        showChatView = true
                                     }
                                 case false:
                                     loginButtonState = .error
@@ -192,8 +188,8 @@ extension ContentView {
                     return Alert(title: Text("メールアドレスまたはパスワードが正しくありません"), message: Text("メールアドレスまたはパスワードが正しくありません。もう一度入力し直してください。"), dismissButton: .default(Text("OK"), action: {loginButtonState = .normal}))
                 }
             }
-            .fullScreenCover(isPresented: $showMainTabView) {
-                MainTabView()
+            .fullScreenCover(isPresented: $showChatView) {
+                ChatView()
             }
             .presentationDetents([.medium])
         }
@@ -207,7 +203,7 @@ extension ContentView {
             },
             label: {
                 Text("サインアップ")
-                    .foregroundColor(ColorManager.baseColor.opacity(0.65))
+                    .foregroundColor(.primary.opacity(0.65))
                     .bold()
             })
         .padding()
