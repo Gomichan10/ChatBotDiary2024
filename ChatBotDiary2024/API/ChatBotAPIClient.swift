@@ -12,7 +12,7 @@ import FirebaseAuth
 class ChatBotAPIClient {
     
     // Difyにメッセージを送るためのメソッド
-    func sendMessageToChatbot(message: String, completion: @escaping (Bool) -> Void) {
+    func sendMessageToChatbot(message: String, completion: @escaping (Result<ChatResponse, Error>) -> Void) {
         let apiKey = "app-bswJF8iUw8XQncJVJEf75MCS"
         let endpoint = "https://api.dify.ai/v1/chat-messages"
         
@@ -32,16 +32,12 @@ class ChatBotAPIClient {
             files: []
         )
         
-        AF.request(endpoint, method: .post, parameters: request, encoder: JSONParameterEncoder.default, headers: headers).responseData { response in
+        AF.request(endpoint, method: .post, parameters: request, encoder: JSONParameterEncoder.default, headers: headers).responseDecodable(of: ChatResponse.self) { response in
             switch response.result {
-            case .success(let data):
-                if let stringData = String(data: data, encoding: .utf8) {
-                    print(stringData)
-                }
-                completion(true)
+            case .success(let chatResponse):
+                completion(.success(chatResponse))
             case .failure(let error):
-                print(error)
-                completion(false)
+                completion(.failure(error))
             }
         }
     }

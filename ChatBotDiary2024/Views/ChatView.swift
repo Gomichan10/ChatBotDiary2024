@@ -36,7 +36,7 @@ extension ChatView {
         // Message Area
         ScrollView {
             VStack (spacing: 15){
-                ForEach(0..<15) { _ in
+                ForEach(0..<1) { _ in
                     HStack (alignment: .top){
                         Image("ChatBotIcon")
                             .resizable()
@@ -84,10 +84,10 @@ extension ChatView {
             Button(action: {
                 ChatBotAPIClient().sendMessageToChatbot(message: chatTextField) { result in
                     switch result {
-                    case true:
-                        print("Success")
-                    case false:
-                        print("failure")
+                    case .success(let chatResponse):
+                        print(chatResponse)
+                    case .failure(let error):
+                        print(error)
                     }
                 }
             }, label: {
