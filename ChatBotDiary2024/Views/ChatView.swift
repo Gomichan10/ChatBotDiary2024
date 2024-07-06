@@ -57,6 +57,16 @@ extension ChatView {
             .padding(.bottom, 20)
         }
         .background(Color("ChatBackground"))
+        .onAppear {
+            ChatBotAPIClient().sendMessageChatbot(message: "こんにちは") { result in
+                switch result {
+                case.success(let chatResponse):
+                    print(chatResponse)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
     }
     
     var navigationArea: some View {
@@ -82,7 +92,7 @@ extension ChatView {
                 .background(Color("white_black"))
                 .clipShape(Capsule())
             Button(action: {
-                ChatBotAPIClient().sendMessageToChatbot(message: chatTextField) { result in
+                ChatBotAPIClient().sendMessageChatbot(message: chatTextField) { result in
                     switch result {
                     case .success(let chatResponse):
                         print(chatResponse)

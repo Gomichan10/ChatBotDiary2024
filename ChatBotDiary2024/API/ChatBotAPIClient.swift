@@ -12,8 +12,8 @@ import FirebaseAuth
 class ChatBotAPIClient {
     
     // Difyにメッセージを送るためのメソッド
-    func sendMessageToChatbot(message: String, completion: @escaping (Result<ChatResponse, Error>) -> Void) {
-        let apiKey = "app-bswJF8iUw8XQncJVJEf75MCS"
+    func sendMessageChatbot(message: String, completion: @escaping (Result<ChatResponse, Error>) -> Void) {
+        let apiKey = "YOUR_API_KEY_HERE"
         let endpoint = "https://api.dify.ai/v1/chat-messages"
         
         guard let user = Auth.auth().currentUser else { return }
