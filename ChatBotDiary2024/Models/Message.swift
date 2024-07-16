@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct Message: Identifiable {
+    var id: String
+    var message: String
+    var isUser: String
+}
+
