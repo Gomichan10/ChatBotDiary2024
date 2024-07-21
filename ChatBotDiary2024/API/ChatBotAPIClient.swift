@@ -1,45 +1,43 @@
-//
-//  ChatBotAPIClient.swift
-//  ChatBotDiary2024
-//
-//  Created by Gomi Kouki on 2024/06/26.
-//
-
 import Foundation
 import Alamofire
 import FirebaseAuth
 
 class ChatBotAPIClient {
+    private let apiKey = "ChatGPT-APIKey"
+    private let apiUrl = "https://api.openai.com/v1/chat/completions"
     
-    // Difyにメッセージを送るためのメソッド
-    func sendMessageChatbot(message: String, completion: @escaping (Result<ChatResponse, Error>) -> Void) {
-        let apiKey = "app-bswJF8iUw8XQncJVJEf75MCS"
-        let endpoint = "https://api.dify.ai/v1/chat-messages"
-        
-        guard let user = Auth.auth().currentUser else { return }
+    // ChatGPTAPIにメッセージを送受信するメソッド
+    func sendMessageChatGPT(messages: [[String: String]], completion: @escaping ([[String: String]]?) -> Void) {
         
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(apiKey)",
             "Content-Type": "application/json"
         ]
         
-        let request = ChatRequest(
-            query: message,
-            inputs: [:],
-            response_mode: "blocking",
-            conversation_id: "",
-            user: user.uid,
-            files: []
-        )
+        let parameters: [String: Any] = [
+            "model": "gpt-3.5-turbo",
+            "messages": messages
+        ]
         
-        AF.request(endpoint, method: .post, parameters: request, encoder: JSONParameterEncoder.default, headers: headers).responseDecodable(of: ChatResponse.self) { response in
+        AF.request(apiUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseDecodable(of: ChatGPT.self) { response in
             switch response.result {
-            case .success(let chatResponse):
-                completion(.success(chatResponse))
+            case .success(let gptResponse):
+                if let firstChoice = gptResponse.choices.first {
+                    let content = firstChoice.message.content
+                    var responseMessage: [[String: String]] = [["role": "assistant", "content": content]]
+                    completion(responseMessage)
+                } else {
+                    completion(nil)
+                }
             case .failure(let error):
-                completion(.failure(error))
+                if let data = response.data, let apiError = try? JSONDecoder().decode(APIError.self, from: data) {
+                    print("API Error: \(apiError.error.message)")
+                } else {
+                    print("Error: \(error)")
+                }
+                completion(nil)
             }
         }
     }
-    
 }
+

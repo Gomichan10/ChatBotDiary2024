@@ -15,6 +15,8 @@
 		B5ABDACD2C048BB5008691F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5ABDACC2C048BB4008691F2 /* GoogleService-Info.plist */; };
 		B5ABDACF2C04913B008691F2 /* UserAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABDACE2C04913B008691F2 /* UserAPIClient.swift */; };
 		B5ABDAD82C09D58C008691F2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABDAD72C09D58C008691F2 /* Validation.swift */; };
+		B5C1CF982C3AE5FC00A35AC3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C1CF972C3AE5FC00A35AC3 /* Message.swift */; };
+		B5C1CF9A2C42643300A35AC3 /* ChatGPT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C1CF992C42643300A35AC3 /* ChatGPT.swift */; };
 		B5D1D1742C2BF89400E4C28E /* ChatBotAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D1D1732C2BF89200E4C28E /* ChatBotAPIClient.swift */; };
 		B5D1D1762C2CF6C200E4C28E /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D1D1752C2CF6C200E4C28E /* Chat.swift */; };
 		B5DDC11A2C10713500F3E4A6 /* FirestoreAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDC1192C10713500F3E4A6 /* FirestoreAPIClient.swift */; };
@@ -37,6 +39,8 @@
 		B5ABDACC2C048BB4008691F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B5ABDACE2C04913B008691F2 /* UserAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIClient.swift; sourceTree = "<group>"; };
 		B5ABDAD72C09D58C008691F2 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		B5C1CF972C3AE5FC00A35AC3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		B5C1CF992C42643300A35AC3 /* ChatGPT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPT.swift; sourceTree = "<group>"; };
 		B5D1D1732C2BF89200E4C28E /* ChatBotAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotAPIClient.swift; sourceTree = "<group>"; };
 		B5D1D1752C2CF6C200E4C28E /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		B5DDC1192C10713500F3E4A6 /* FirestoreAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreAPIClient.swift; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 			children = (
 				B5DDC11E2C10736000F3E4A6 /* User.swift */,
 				B5D1D1752C2CF6C200E4C28E /* Chat.swift */,
+				B5C1CF972C3AE5FC00A35AC3 /* Message.swift */,
+				B5C1CF992C42643300A35AC3 /* ChatGPT.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -286,9 +292,11 @@
 				B5DDC1272C173D8900F3E4A6 /* ChatView.swift in Sources */,
 				B5DDC11F2C10736000F3E4A6 /* User.swift in Sources */,
 				B5DDC11A2C10713500F3E4A6 /* FirestoreAPIClient.swift in Sources */,
+				B5C1CF9A2C42643300A35AC3 /* ChatGPT.swift in Sources */,
 				B5DDC12B2C185ECB00F3E4A6 /* LaunchScreenView.swift in Sources */,
 				B5ABDAD82C09D58C008691F2 /* Validation.swift in Sources */,
 				B5ABDABF2C006F41008691F2 /* ChatBotDiary2024App.swift in Sources */,
+				B5C1CF982C3AE5FC00A35AC3 /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
