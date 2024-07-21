@@ -7,9 +7,14 @@
 
 import Foundation
 
-struct Message: Identifiable {
+struct Message: Identifiable, Equatable {
     var id: String
     var message: String
     var isUser: String
+    
+    static func ==(lhs: Message, rhs:Message) -> Bool {
+        return lhs.id == rhs.id && lhs.message == rhs.message && lhs.isUser == rhs.isUser
+    }
+    
 }
 
