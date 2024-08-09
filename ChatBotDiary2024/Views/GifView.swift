@@ -21,6 +21,7 @@ struct GifView: UIViewRepresentable {
         imageView.clipsToBounds = true
         imageView.frame.size = CGSize(width: width, height: height)
         
+        
         do {
             let gif = try UIImage(gifName: gifName)
             imageView.setGifImage(gif, loopCount: -1)
