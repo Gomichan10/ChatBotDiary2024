@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		AC04305AEF319471B8434793 /* Pods_ChatBotDiary2024.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD240A0F334914E2130A20FC /* Pods_ChatBotDiary2024.framework */; };
+		B52F6BE82C7067E500FD6EDA /* KiwiMaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B52F6BE72C7067E400FD6EDA /* KiwiMaru-Regular.ttf */; };
+		B530BFCC2C569550007AE504 /* CheckLastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B530BFCB2C569550007AE504 /* CheckLastMessage.swift */; };
+		B530BFCE2C56A101007AE504 /* GifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B530BFCD2C56A100007AE504 /* GifView.swift */; };
+		B5433B822C7CE447006886F3 /* FindCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5433B812C7CE447006886F3 /* FindCalendar.swift */; };
+		B55995F02C8C281400B54CC9 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55995EF2C8C281400B54CC9 /* CustomAlertView.swift */; };
+		B5601FBA2C8C3F5900F06021 /* KaiseiHarunoUmi-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5601FB92C8C3F5900F06021 /* KaiseiHarunoUmi-Regular.ttf */; };
+		B5601FBC2C8C416000F06021 /* KaiseiHarunoUmi-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5601FBB2C8C416000F06021 /* KaiseiHarunoUmi-Medium.ttf */; };
+		B5601FBE2C8E761400F06021 /* KaiseiHarunoUmi-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5601FBD2C8E761400F06021 /* KaiseiHarunoUmi-Bold.ttf */; };
 		B5ABDABF2C006F41008691F2 /* ChatBotDiary2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABDABE2C006F41008691F2 /* ChatBotDiary2024App.swift */; };
 		B5ABDAC12C006F41008691F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABDAC02C006F41008691F2 /* ContentView.swift */; };
 		B5ABDAC32C006F44008691F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5ABDAC22C006F44008691F2 /* Assets.xcassets */; };
@@ -22,15 +30,27 @@
 		B5DDC11A2C10713500F3E4A6 /* FirestoreAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDC1192C10713500F3E4A6 /* FirestoreAPIClient.swift */; };
 		B5DDC11F2C10736000F3E4A6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDC11E2C10736000F3E4A6 /* User.swift */; };
 		B5DDC1232C15DF5700F3E4A6 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDC1222C15DF5700F3E4A6 /* Buttons.swift */; };
-		B5DDC1252C173D3700F3E4A6 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDC1242C173D3700F3E4A6 /* MainTabView.swift */; };
 		B5DDC1272C173D8900F3E4A6 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDC1262C173D8900F3E4A6 /* ChatView.swift */; };
 		B5DDC1292C173DAA00F3E4A6 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDC1282C173DAA00F3E4A6 /* CalendarView.swift */; };
-		B5DDC12B2C185ECB00F3E4A6 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDC12A2C185ECB00F3E4A6 /* LaunchScreenView.swift */; };
+		B5F44B3D2C56B92D00386431 /* Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = B5F44B3C2C56B92D00386431 /* Loading.gif */; };
+		B5F44B412C65B53700386431 /* CheckMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F44B402C65B53700386431 /* CheckMonth.swift */; };
+		B5F44B432C65B8D300386431 /* ExtractString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F44B422C65B8D300386431 /* ExtractString.swift */; };
+		B5F44B452C68DA1300386431 /* DatePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F44B442C68DA1300386431 /* DatePosition.swift */; };
+		B5F44B472C6A14DD00386431 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F44B462C6A14DD00386431 /* Diary.swift */; };
+		B5F44B4D2C6DC73100386431 /* FSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F44B4C2C6DC73100386431 /* FSCalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		66E9753325794D9F532D3383 /* Pods-ChatBotDiary2024.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatBotDiary2024.release.xcconfig"; path = "Target Support Files/Pods-ChatBotDiary2024/Pods-ChatBotDiary2024.release.xcconfig"; sourceTree = "<group>"; };
 		6E2B796C3443A712EC8C54DB /* Pods-ChatBotDiary2024.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatBotDiary2024.debug.xcconfig"; path = "Target Support Files/Pods-ChatBotDiary2024/Pods-ChatBotDiary2024.debug.xcconfig"; sourceTree = "<group>"; };
+		B52F6BE72C7067E400FD6EDA /* KiwiMaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KiwiMaru-Regular.ttf"; sourceTree = "<group>"; };
+		B530BFCB2C569550007AE504 /* CheckLastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLastMessage.swift; sourceTree = "<group>"; };
+		B530BFCD2C56A100007AE504 /* GifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifView.swift; sourceTree = "<group>"; };
+		B5433B812C7CE447006886F3 /* FindCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCalendar.swift; sourceTree = "<group>"; };
+		B55995EF2C8C281400B54CC9 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		B5601FB92C8C3F5900F06021 /* KaiseiHarunoUmi-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KaiseiHarunoUmi-Regular.ttf"; sourceTree = "<group>"; };
+		B5601FBB2C8C416000F06021 /* KaiseiHarunoUmi-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KaiseiHarunoUmi-Medium.ttf"; sourceTree = "<group>"; };
+		B5601FBD2C8E761400F06021 /* KaiseiHarunoUmi-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KaiseiHarunoUmi-Bold.ttf"; sourceTree = "<group>"; };
 		B5ABDABB2C006F41008691F2 /* ChatBotDiary2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatBotDiary2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5ABDABE2C006F41008691F2 /* ChatBotDiary2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotDiary2024App.swift; sourceTree = "<group>"; };
 		B5ABDAC02C006F41008691F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,11 +66,15 @@
 		B5DDC1192C10713500F3E4A6 /* FirestoreAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreAPIClient.swift; sourceTree = "<group>"; };
 		B5DDC11E2C10736000F3E4A6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B5DDC1222C15DF5700F3E4A6 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
-		B5DDC1242C173D3700F3E4A6 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabView.swift; path = /Users/gomichan/Desktop/ChatBotDiary2024/ChatBotDiary2024/Views/MainTabView.swift; sourceTree = "<absolute>"; };
 		B5DDC1262C173D8900F3E4A6 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		B5DDC1282C173DAA00F3E4A6 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
-		B5DDC12A2C185ECB00F3E4A6 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		B5DDC12C2C18676100F3E4A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5F44B3C2C56B92D00386431 /* Loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Loading.gif; sourceTree = "<group>"; };
+		B5F44B402C65B53700386431 /* CheckMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMonth.swift; sourceTree = "<group>"; };
+		B5F44B422C65B8D300386431 /* ExtractString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractString.swift; sourceTree = "<group>"; };
+		B5F44B442C68DA1300386431 /* DatePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePosition.swift; sourceTree = "<group>"; };
+		B5F44B462C6A14DD00386431 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
+		B5F44B4C2C6DC73100386431 /* FSCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarView.swift; sourceTree = "<group>"; };
 		FD240A0F334914E2130A20FC /* Pods_ChatBotDiary2024.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatBotDiary2024.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -83,6 +107,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B55995F12C8C3EAD00B54CC9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B52F6BE72C7067E400FD6EDA /* KiwiMaru-Regular.ttf */,
+				B5601FB92C8C3F5900F06021 /* KaiseiHarunoUmi-Regular.ttf */,
+				B5601FBB2C8C416000F06021 /* KaiseiHarunoUmi-Medium.ttf */,
+				B5601FBD2C8E761400F06021 /* KaiseiHarunoUmi-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		B5ABDAB22C006F41008691F2 = {
 			isa = PBXGroup;
 			children = (
@@ -105,11 +140,12 @@
 			isa = PBXGroup;
 			children = (
 				B5ABDABE2C006F41008691F2 /* ChatBotDiary2024App.swift */,
-				B5ABDAD52C09D292008691F2 /* Views */,
-				B5DDC11D2C10734500F3E4A6 /* Models */,
-				B5ABDAD42C09D27E008691F2 /* API */,
-				B5ABDAD62C09D2EF008691F2 /* Func */,
+				B5ABDAD52C09D292008691F2 /* UI */,
+				B5ABDAD42C09D27E008691F2 /* Infrastructure */,
+				B5ABDAD62C09D2EF008691F2 /* Domain */,
+				B55995F12C8C3EAD00B54CC9 /* Fonts */,
 				B5ABDAC22C006F44008691F2 /* Assets.xcassets */,
+				B5F44B3C2C56B92D00386431 /* Loading.gif */,
 				B5DDC12C2C18676100F3E4A6 /* Info.plist */,
 				B5ABDACC2C048BB4008691F2 /* GoogleService-Info.plist */,
 				B5ABDAC42C006F44008691F2 /* Preview Content */,
@@ -125,35 +161,42 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		B5ABDAD42C09D27E008691F2 /* API */ = {
+		B5ABDAD42C09D27E008691F2 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				B5DDC11D2C10734500F3E4A6 /* Models */,
 				B5ABDACE2C04913B008691F2 /* UserAPIClient.swift */,
 				B5DDC1192C10713500F3E4A6 /* FirestoreAPIClient.swift */,
 				B5D1D1732C2BF89200E4C28E /* ChatBotAPIClient.swift */,
 			);
-			path = API;
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
-		B5ABDAD52C09D292008691F2 /* Views */ = {
+		B5ABDAD52C09D292008691F2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				B5ABDAC02C006F41008691F2 /* ContentView.swift */,
-				B5DDC1242C173D3700F3E4A6 /* MainTabView.swift */,
 				B5DDC1262C173D8900F3E4A6 /* ChatView.swift */,
 				B5DDC1282C173DAA00F3E4A6 /* CalendarView.swift */,
+				B530BFCD2C56A100007AE504 /* GifView.swift */,
+				B5F44B4C2C6DC73100386431 /* FSCalendarView.swift */,
+				B55995EF2C8C281400B54CC9 /* CustomAlertView.swift */,
 				B5DDC1222C15DF5700F3E4A6 /* Buttons.swift */,
-				B5DDC12A2C185ECB00F3E4A6 /* LaunchScreenView.swift */,
 			);
-			path = Views;
+			path = UI;
 			sourceTree = "<group>";
 		};
-		B5ABDAD62C09D2EF008691F2 /* Func */ = {
+		B5ABDAD62C09D2EF008691F2 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
 				B5ABDAD72C09D58C008691F2 /* Validation.swift */,
+				B530BFCB2C569550007AE504 /* CheckLastMessage.swift */,
+				B5F44B402C65B53700386431 /* CheckMonth.swift */,
+				B5F44B422C65B8D300386431 /* ExtractString.swift */,
+				B5F44B442C68DA1300386431 /* DatePosition.swift */,
+				B5433B812C7CE447006886F3 /* FindCalendar.swift */,
 			);
-			path = Func;
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		B5DDC11D2C10734500F3E4A6 /* Models */ = {
@@ -163,6 +206,7 @@
 				B5D1D1752C2CF6C200E4C28E /* Chat.swift */,
 				B5C1CF972C3AE5FC00A35AC3 /* Message.swift */,
 				B5C1CF992C42643300A35AC3 /* ChatGPT.swift */,
+				B5F44B462C6A14DD00386431 /* Diary.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -227,9 +271,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5601FBE2C8E761400F06021 /* KaiseiHarunoUmi-Bold.ttf in Resources */,
 				B5ABDAC62C006F44008691F2 /* Preview Assets.xcassets in Resources */,
+				B5F44B3D2C56B92D00386431 /* Loading.gif in Resources */,
 				B5ABDAC32C006F44008691F2 /* Assets.xcassets in Resources */,
+				B5601FBC2C8C416000F06021 /* KaiseiHarunoUmi-Medium.ttf in Resources */,
 				B5ABDACD2C048BB5008691F2 /* GoogleService-Info.plist in Resources */,
+				B5601FBA2C8C3F5900F06021 /* KaiseiHarunoUmi-Regular.ttf in Resources */,
+				B52F6BE82C7067E500FD6EDA /* KiwiMaru-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,20 +331,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B55995F02C8C281400B54CC9 /* CustomAlertView.swift in Sources */,
 				B5D1D1762C2CF6C200E4C28E /* Chat.swift in Sources */,
+				B5F44B432C65B8D300386431 /* ExtractString.swift in Sources */,
 				B5DDC1292C173DAA00F3E4A6 /* CalendarView.swift in Sources */,
+				B5F44B472C6A14DD00386431 /* Diary.swift in Sources */,
+				B530BFCC2C569550007AE504 /* CheckLastMessage.swift in Sources */,
 				B5DDC1232C15DF5700F3E4A6 /* Buttons.swift in Sources */,
 				B5ABDAC12C006F41008691F2 /* ContentView.swift in Sources */,
 				B5D1D1742C2BF89400E4C28E /* ChatBotAPIClient.swift in Sources */,
 				B5ABDACF2C04913B008691F2 /* UserAPIClient.swift in Sources */,
-				B5DDC1252C173D3700F3E4A6 /* MainTabView.swift in Sources */,
 				B5DDC1272C173D8900F3E4A6 /* ChatView.swift in Sources */,
 				B5DDC11F2C10736000F3E4A6 /* User.swift in Sources */,
+				B5433B822C7CE447006886F3 /* FindCalendar.swift in Sources */,
 				B5DDC11A2C10713500F3E4A6 /* FirestoreAPIClient.swift in Sources */,
 				B5C1CF9A2C42643300A35AC3 /* ChatGPT.swift in Sources */,
-				B5DDC12B2C185ECB00F3E4A6 /* LaunchScreenView.swift in Sources */,
 				B5ABDAD82C09D58C008691F2 /* Validation.swift in Sources */,
 				B5ABDABF2C006F41008691F2 /* ChatBotDiary2024App.swift in Sources */,
+				B5F44B412C65B53700386431 /* CheckMonth.swift in Sources */,
+				B5F44B4D2C6DC73100386431 /* FSCalendarView.swift in Sources */,
+				B530BFCE2C56A101007AE504 /* GifView.swift in Sources */,
+				B5F44B452C68DA1300386431 /* DatePosition.swift in Sources */,
 				B5C1CF982C3AE5FC00A35AC3 /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +363,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -370,6 +427,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
