@@ -12,7 +12,9 @@
 
 
 ## 画面 (現在開発中!)
-<img width = 80% src = "![AiDiaryUI](https://github.com/user-attachments/assets/0eba7251-7571-4db8-acd6-84a2a2b6743f)">
+
+<img width = 80% src = "https://github.com/user-attachments/assets/0eba7251-7571-4db8-acd6-84a2a2b6743f">
+
 
 
 ## 開発人数
