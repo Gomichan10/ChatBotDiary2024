@@ -56,8 +56,9 @@ class FirestoreAPIClient {
             db.collection("diary").addDocument(data: encodeDiary) { error in
                 if let error = error {
                     print("Error saving diary entry: \(error.localizedDescription)")
+                    completion(false)
                 } else {
-                    
+                    completion(true)
                 }
             }
         } catch let error {

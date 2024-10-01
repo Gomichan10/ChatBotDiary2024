@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct ContentView: View {
     
@@ -28,6 +29,8 @@ struct ContentView: View {
         case pass
         case error
     }
+    
+    private let uid = Auth.auth().currentUser?.uid
     
     
     @State var signinSheet: Bool = false
@@ -72,6 +75,14 @@ struct ContentView: View {
                 loginButton
                 signInButton
             }
+        }
+        .onAppear {
+            if let uid = Auth.auth().currentUser?.uid, !uid.isEmpty {
+                showChatView = true
+            }
+        }
+        .fullScreenCover(isPresented: $showChatView) {
+            ChatView()
         }
     }
 }
