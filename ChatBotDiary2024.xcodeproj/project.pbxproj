@@ -23,6 +23,7 @@
 		B5ABDACD2C048BB5008691F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5ABDACC2C048BB4008691F2 /* GoogleService-Info.plist */; };
 		B5ABDACF2C04913B008691F2 /* UserAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABDACE2C04913B008691F2 /* UserAPIClient.swift */; };
 		B5ABDAD82C09D58C008691F2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABDAD72C09D58C008691F2 /* Validation.swift */; };
+		B5B92A6A2CAC2B88009F5E17 /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B92A692CAC2B88009F5E17 /* KeyboardResponder.swift */; };
 		B5BD19F92C9847900010CD6E /* ChatBotAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BD19F82C9847900010CD6E /* ChatBotAPIClient.swift */; };
 		B5C1CF982C3AE5FC00A35AC3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C1CF972C3AE5FC00A35AC3 /* Message.swift */; };
 		B5C1CF9A2C42643300A35AC3 /* ChatGPT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C1CF992C42643300A35AC3 /* ChatGPT.swift */; };
@@ -59,6 +60,7 @@
 		B5ABDACC2C048BB4008691F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B5ABDACE2C04913B008691F2 /* UserAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIClient.swift; sourceTree = "<group>"; };
 		B5ABDAD72C09D58C008691F2 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		B5B92A692CAC2B88009F5E17 /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		B5BD19F82C9847900010CD6E /* ChatBotAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotAPIClient.swift; sourceTree = "<group>"; };
 		B5C1CF972C3AE5FC00A35AC3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		B5C1CF992C42643300A35AC3 /* ChatGPT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPT.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				B5ABDABE2C006F41008691F2 /* ChatBotDiary2024App.swift */,
 				B5ABDAD52C09D292008691F2 /* UI */,
+				B5B92A682CAC2ACE009F5E17 /* Application */,
 				B5ABDAD42C09D27E008691F2 /* Infrastructure */,
 				B5ABDAD62C09D2EF008691F2 /* Domain */,
 				B55995F12C8C3EAD00B54CC9 /* Fonts */,
@@ -197,6 +200,14 @@
 				B5433B812C7CE447006886F3 /* FindCalendar.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		B5B92A682CAC2ACE009F5E17 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B5B92A692CAC2B88009F5E17 /* KeyboardResponder.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 		B5DDC11D2C10734500F3E4A6 /* Models */ = {
@@ -341,6 +352,7 @@
 				B5ABDAC12C006F41008691F2 /* ContentView.swift in Sources */,
 				B5ABDACF2C04913B008691F2 /* UserAPIClient.swift in Sources */,
 				B5DDC1272C173D8900F3E4A6 /* ChatView.swift in Sources */,
+				B5B92A6A2CAC2B88009F5E17 /* KeyboardResponder.swift in Sources */,
 				B5DDC11F2C10736000F3E4A6 /* User.swift in Sources */,
 				B5433B822C7CE447006886F3 /* FindCalendar.swift in Sources */,
 				B5DDC11A2C10713500F3E4A6 /* FirestoreAPIClient.swift in Sources */,

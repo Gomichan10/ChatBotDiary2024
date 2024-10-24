@@ -46,14 +46,16 @@ struct ChatView: View {
     
     @FocusState private var focusedField: Field?
     
+    @ObservedObject private var keyboard = KeyboardResponder()
+    
     @State private var chatTextField: String = ""
     @State private var conversationID: String = ""
     @State private var isMessageEnd: Bool = false
     @State private var isLoading = false
     @State private var isShowAlert = false
     @State private var isSuccses = false
-    @State private var shouldNavigation = false
     @State private var isSixMessage = false
+    @State private var isLastMessage = false
     @State private var chat: [Message] = [Message(id: UUID().uuidString, message: "これから日記を作るよ！どんなことがあったのか教えてね！", isUser: "assistant")]
     
     // プロンプトを設定
@@ -64,49 +66,51 @@ struct ChatView: View {
     
     var body: some View {
         NavigationView {
-            VStack (spacing: 0){
-                messageArea
-                    .overlay (
-                        navigationArea
-                        
-                        ,alignment: .top
-                    )
-                    .overlay(
-                        Group {
-                            if isShowAlert {
-                                if isSuccses {
-                                    AnyView(
-                                        SuccsesAlertView(
-                                            onCancel: {
-                                                messages = [[
-                                                    "role": "system",
-                                                    "content": chatPrompt
-                                                ]]
-                                                chat = [Message(id: UUID().uuidString, message: "これから日記を作るよ！どんなことがあったのか教えてね！", isUser: "assistant")]
-                                                withAnimation { // アニメーションでフェードアウト
+            GeometryReader { geometry in
+                VStack (spacing: 0){
+                    messageArea
+                        .overlay (
+                            navigationArea
+                            
+                            ,alignment: .top
+                        )
+                        .overlay(
+                            Group {
+                                if isShowAlert {
+                                    if isSuccses {
+                                        AnyView(
+                                            SuccsesAlertView(
+                                                onCancel: {
+                                                    messages = [[
+                                                        "role": "system",
+                                                        "content": chatPrompt
+                                                    ]]
+                                                    chat = [Message(id: UUID().uuidString, message: "これから日記を作るよ！どんなことがあったのか教えてね！", isUser: "assistant")]
+                                                    withAnimation { // アニメーションでフェードアウト
+                                                        isShowAlert = false
+                                                    }
+                                                }
+                                            )
+                                            .opacity(isShowAlert ? 1 : 0)
+                                            .animation(.easeInOut(duration: 0.3), value: isShowAlert)
+                                        )
+                                    } else {
+                                        AnyView(
+                                            FailureAlertView(
+                                                onRetry: {
                                                     isShowAlert = false
                                                 }
-                                            }
+                                            )
                                         )
-                                        .opacity(isShowAlert ? 1 : 0)
-                                        .animation(.easeInOut(duration: 0.3), value: isShowAlert)
-                                    )
+                                    }
                                 } else {
-                                    AnyView(
-                                        FailureAlertView(
-                                            onRetry: {
-                                                isShowAlert = false
-                                            }
-                                        )
-                                    )
+                                    EmptyView() // アラートが表示されていない場合は空のビューを表示
                                 }
-                            } else {
-                                EmptyView() // アラートが表示されていない場合は空のビューを表示
                             }
-                        }
-                        , alignment: .center
-                    )
-                inputArea
+                            , alignment: .center
+                        )
+                    inputArea
+                }
             }
         }
     }
@@ -169,6 +173,10 @@ extension ChatView {
                                             .bold()
                                             .foregroundColor(Color("DiaryAddColor"))
                                             .padding()
+                                            .onAppear{
+                                                // メッセージがラストだったらメッセージを送れないようにする
+                                                isLastMessage = true
+                                            }
                                         }
                                     }
                                     .background(Color("white_black"))
@@ -176,6 +184,7 @@ extension ChatView {
                                     
                                     Spacer()
                                 }
+                                .padding(.bottom)
                             }
                             
                         } else {
@@ -194,17 +203,22 @@ extension ChatView {
                                     .frame(width: 50, height: 50)
                                     .clipShape(Circle())
                             }
+                            .padding(.bottom)
                         }
                     }
                 }
                 .padding(.horizontal)
                 .padding(.top, 72)
-                .padding(.bottom, 20)
             }
             .frame(maxWidth: .infinity)
             .background(Color("ChatBackground"))
             .onTapGesture {
                 focusedField = nil
+            }
+            .onAppear {
+                if let lastMessage = chat.last {
+                    proxy.scrollTo(lastMessage.id, anchor: .bottom)
+                }
             }
             .onChange(of: chat) {
                 withAnimation {
@@ -262,7 +276,7 @@ extension ChatView {
                 // キーボードをしまう
                 focusedField = nil
                 
-                if !chatTextField.isEmpty {
+                if !chatTextField.isEmpty && !isLastMessage {
                     if messages.count >= 11 {
                         isSixMessage = true
                     }
@@ -304,7 +318,7 @@ extension ChatView {
             }, label: {
                 Image(systemName: "paperplane.fill")
                     .resizable()
-                    .foregroundColor(chatTextField.isEmpty ? .gray.opacity(0.4) : Color("LaunchScreenBackGround"))
+                    .foregroundColor(chatTextField.isEmpty || isLastMessage ? .gray.opacity(0.4) : Color("LaunchScreenBackGround"))
                     .frame(width: 20, height: 20)
                     .padding(.horizontal)
             })

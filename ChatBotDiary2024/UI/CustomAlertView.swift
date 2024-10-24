@@ -28,22 +28,23 @@ struct SuccsesAlertView: View {
                 HStack {
                     NavigationLink(destination: CalendarView()) {
                         Text("確認")
+                            .bold()
                             .foregroundColor(.black)
                             .frame(width: 100)
                             .padding()
                     }
-                    Divider()
-                        .frame(height: 60)
-                        .background(Color.black)
-                    
-                    Button(action: {
-                        onCancel()
-                    }, label: {
-                        Text("キャンセル")
-                            .foregroundColor(.white)
-                            .frame(width: 100)
-                            .padding()
-                    })
+//                    Divider()？
+//                        .frame(height: 60)
+//                        .background(Color.black)
+//                    
+//                    Button(action: {
+//                        onCancel()
+//                    }, label: {
+//                        Text("キャンセル")
+//                            .foregroundColor(.white)
+//                            .frame(width: 100)
+//                            .padding()
+//                    })
                 }
             }
         }
