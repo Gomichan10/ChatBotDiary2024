@@ -193,61 +193,75 @@
 			<key>orderHint</key>
 			<integer>25</integer>
 		</dict>
-		<key>Pods-ChatBotDiary2024.xcscheme</key>
+		<key>Keys-framework.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>38</integer>
+			<integer>34</integer>
 		</dict>
-		<key>PromisesObjC-FBLPromises_Privacy.xcscheme</key>
+		<key>Keys-library.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>35</integer>
+		</dict>
+		<key>Pods-ChatBotDiary2024.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>40</integer>
 		</dict>
-		<key>PromisesObjC.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>39</integer>
-		</dict>
-		<key>RecaptchaInterop.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>41</integer>
-		</dict>
-		<key>SDWebImage-SDWebImage.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>43</integer>
-		</dict>
-		<key>SDWebImage.xcscheme</key>
+		<key>PromisesObjC-FBLPromises_Privacy.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>42</integer>
 		</dict>
-		<key>SwiftyGif-SwiftyGif.xcscheme</key>
+		<key>PromisesObjC.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>41</integer>
+		</dict>
+		<key>RecaptchaInterop.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>43</integer>
+		</dict>
+		<key>SDWebImage-SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>45</integer>
 		</dict>
-		<key>SwiftyGif.xcscheme</key>
+		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>44</integer>
+		</dict>
+		<key>SwiftyGif-SwiftyGif.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>47</integer>
+		</dict>
+		<key>SwiftyGif.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>46</integer>
 		</dict>
 		<key>abseil-xcprivacy.xcscheme</key>
 		<dict>
@@ -303,28 +317,28 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>35</integer>
+			<integer>37</integer>
 		</dict>
 		<key>leveldb-library.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>34</integer>
+			<integer>36</integer>
 		</dict>
 		<key>nanopb-nanopb_Privacy.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>37</integer>
+			<integer>39</integer>
 		</dict>
 		<key>nanopb.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>36</integer>
+			<integer>38</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
