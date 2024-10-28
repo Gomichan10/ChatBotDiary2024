@@ -13,6 +13,7 @@
 		B530BFCE2C56A101007AE504 /* GifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B530BFCD2C56A100007AE504 /* GifView.swift */; };
 		B5433B822C7CE447006886F3 /* FindCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5433B812C7CE447006886F3 /* FindCalendar.swift */; };
 		B55995F02C8C281400B54CC9 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55995EF2C8C281400B54CC9 /* CustomAlertView.swift */; };
+		B55FE5F02CCA4759007F9C49 /* ChatBotAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55FE5EF2CCA4759007F9C49 /* ChatBotAPIClient.swift */; };
 		B5601FBA2C8C3F5900F06021 /* KaiseiHarunoUmi-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5601FB92C8C3F5900F06021 /* KaiseiHarunoUmi-Regular.ttf */; };
 		B5601FBC2C8C416000F06021 /* KaiseiHarunoUmi-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5601FBB2C8C416000F06021 /* KaiseiHarunoUmi-Medium.ttf */; };
 		B5601FBE2C8E761400F06021 /* KaiseiHarunoUmi-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5601FBD2C8E761400F06021 /* KaiseiHarunoUmi-Bold.ttf */; };
@@ -24,7 +25,6 @@
 		B5ABDACF2C04913B008691F2 /* UserAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABDACE2C04913B008691F2 /* UserAPIClient.swift */; };
 		B5ABDAD82C09D58C008691F2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABDAD72C09D58C008691F2 /* Validation.swift */; };
 		B5B92A6A2CAC2B88009F5E17 /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B92A692CAC2B88009F5E17 /* KeyboardResponder.swift */; };
-		B5BD19F92C9847900010CD6E /* ChatBotAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BD19F82C9847900010CD6E /* ChatBotAPIClient.swift */; };
 		B5C1CF982C3AE5FC00A35AC3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C1CF972C3AE5FC00A35AC3 /* Message.swift */; };
 		B5C1CF9A2C42643300A35AC3 /* ChatGPT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C1CF992C42643300A35AC3 /* ChatGPT.swift */; };
 		B5D1D1762C2CF6C200E4C28E /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D1D1752C2CF6C200E4C28E /* Chat.swift */; };
@@ -49,6 +49,7 @@
 		B530BFCD2C56A100007AE504 /* GifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifView.swift; sourceTree = "<group>"; };
 		B5433B812C7CE447006886F3 /* FindCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCalendar.swift; sourceTree = "<group>"; };
 		B55995EF2C8C281400B54CC9 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		B55FE5EF2CCA4759007F9C49 /* ChatBotAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotAPIClient.swift; sourceTree = "<group>"; };
 		B5601FB92C8C3F5900F06021 /* KaiseiHarunoUmi-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KaiseiHarunoUmi-Regular.ttf"; sourceTree = "<group>"; };
 		B5601FBB2C8C416000F06021 /* KaiseiHarunoUmi-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KaiseiHarunoUmi-Medium.ttf"; sourceTree = "<group>"; };
 		B5601FBD2C8E761400F06021 /* KaiseiHarunoUmi-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KaiseiHarunoUmi-Bold.ttf"; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		B5ABDACE2C04913B008691F2 /* UserAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIClient.swift; sourceTree = "<group>"; };
 		B5ABDAD72C09D58C008691F2 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		B5B92A692CAC2B88009F5E17 /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
-		B5BD19F82C9847900010CD6E /* ChatBotAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotAPIClient.swift; sourceTree = "<group>"; };
 		B5C1CF972C3AE5FC00A35AC3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		B5C1CF992C42643300A35AC3 /* ChatGPT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPT.swift; sourceTree = "<group>"; };
 		B5D1D1752C2CF6C200E4C28E /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 				B5DDC11D2C10734500F3E4A6 /* Models */,
 				B5ABDACE2C04913B008691F2 /* UserAPIClient.swift */,
 				B5DDC1192C10713500F3E4A6 /* FirestoreAPIClient.swift */,
-				B5BD19F82C9847900010CD6E /* ChatBotAPIClient.swift */,
+				B55FE5EF2CCA4759007F9C49 /* ChatBotAPIClient.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -356,7 +356,6 @@
 				B5DDC11F2C10736000F3E4A6 /* User.swift in Sources */,
 				B5433B822C7CE447006886F3 /* FindCalendar.swift in Sources */,
 				B5DDC11A2C10713500F3E4A6 /* FirestoreAPIClient.swift in Sources */,
-				B5BD19F92C9847900010CD6E /* ChatBotAPIClient.swift in Sources */,
 				B5C1CF9A2C42643300A35AC3 /* ChatGPT.swift in Sources */,
 				B5ABDAD82C09D58C008691F2 /* Validation.swift in Sources */,
 				B5ABDABF2C006F41008691F2 /* ChatBotDiary2024App.swift in Sources */,
@@ -365,6 +364,7 @@
 				B530BFCE2C56A101007AE504 /* GifView.swift in Sources */,
 				B5F44B452C68DA1300386431 /* DatePosition.swift in Sources */,
 				B5C1CF982C3AE5FC00A35AC3 /* Message.swift in Sources */,
+				B55FE5F02CCA4759007F9C49 /* ChatBotAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
