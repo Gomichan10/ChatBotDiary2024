@@ -8,7 +8,7 @@
 import SwiftUI
 import FirebaseAuth
 
-struct ContentView: View {
+struct StartView: View {
     
     enum LoginButtonState {
         case normal
@@ -32,7 +32,6 @@ struct ContentView: View {
     
     private let uid = Auth.auth().currentUser?.uid
     
-    
     @State var signinSheet: Bool = false
     @State var loginSheet: Bool = false
     @State var loginEmail: String = ""
@@ -50,27 +49,9 @@ struct ContentView: View {
     
     var body: some View {
         //背景とタイトル
+        startViewDecoration
         ZStack {
-            Image("Diary")
-                .resizable()
-                .scaledToFill()
-                .mask(alignment: .top) {
-                    LinearGradient(
-                        gradient: .init(colors: [.red, .clear]),
-                        startPoint: .center,
-                        endPoint: .bottom
-                    )
-                }
-                .edgesIgnoringSafeArea(.all)
-            VStack (){
-                Text("AIと日記を作ろう")
-                    .foregroundColor(.white)
-                    .font(.system(size: 30.0, design: .default))
-                    .bold()
-                    .padding(.top, 110)
-                Text("いつもの日記をより楽しく楽に")
-                    .foregroundColor(.white)
-                Spacer()
+            VStack {
                 googleButton
                 loginButton
                 signInButton
@@ -87,11 +68,12 @@ struct ContentView: View {
     }
 }
 
+
 #Preview {
-    ContentView()
+    StartView()
 }
 
-extension ContentView {
+extension StartView {
     
     //Googleログインボタン
     var googleButton: some View {

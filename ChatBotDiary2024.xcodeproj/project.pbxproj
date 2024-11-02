@@ -17,8 +17,9 @@
 		B5601FBA2C8C3F5900F06021 /* KaiseiHarunoUmi-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5601FB92C8C3F5900F06021 /* KaiseiHarunoUmi-Regular.ttf */; };
 		B5601FBC2C8C416000F06021 /* KaiseiHarunoUmi-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5601FBB2C8C416000F06021 /* KaiseiHarunoUmi-Medium.ttf */; };
 		B5601FBE2C8E761400F06021 /* KaiseiHarunoUmi-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5601FBD2C8E761400F06021 /* KaiseiHarunoUmi-Bold.ttf */; };
+		B59A17D42CD3CF060009F6E6 /* StartViewDecoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59A17D32CD3CF060009F6E6 /* StartViewDecoration.swift */; };
 		B5ABDABF2C006F41008691F2 /* ChatBotDiary2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABDABE2C006F41008691F2 /* ChatBotDiary2024App.swift */; };
-		B5ABDAC12C006F41008691F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABDAC02C006F41008691F2 /* ContentView.swift */; };
+		B5ABDAC12C006F41008691F2 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABDAC02C006F41008691F2 /* StartView.swift */; };
 		B5ABDAC32C006F44008691F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5ABDAC22C006F44008691F2 /* Assets.xcassets */; };
 		B5ABDAC62C006F44008691F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5ABDAC52C006F44008691F2 /* Preview Assets.xcassets */; };
 		B5ABDACD2C048BB5008691F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5ABDACC2C048BB4008691F2 /* GoogleService-Info.plist */; };
@@ -53,9 +54,10 @@
 		B5601FB92C8C3F5900F06021 /* KaiseiHarunoUmi-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KaiseiHarunoUmi-Regular.ttf"; sourceTree = "<group>"; };
 		B5601FBB2C8C416000F06021 /* KaiseiHarunoUmi-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KaiseiHarunoUmi-Medium.ttf"; sourceTree = "<group>"; };
 		B5601FBD2C8E761400F06021 /* KaiseiHarunoUmi-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KaiseiHarunoUmi-Bold.ttf"; sourceTree = "<group>"; };
+		B59A17D32CD3CF060009F6E6 /* StartViewDecoration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewDecoration.swift; sourceTree = "<group>"; };
 		B5ABDABB2C006F41008691F2 /* ChatBotDiary2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatBotDiary2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5ABDABE2C006F41008691F2 /* ChatBotDiary2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotDiary2024App.swift; sourceTree = "<group>"; };
-		B5ABDAC02C006F41008691F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B5ABDAC02C006F41008691F2 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		B5ABDAC22C006F44008691F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5ABDAC52C006F44008691F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B5ABDACC2C048BB4008691F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -120,6 +122,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		B59A17D22CD3C9B50009F6E6 /* StartScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B5ABDAC02C006F41008691F2 /* StartView.swift */,
+				B59A17D32CD3CF060009F6E6 /* StartViewDecoration.swift */,
+			);
+			path = StartScreen;
+			sourceTree = "<group>";
+		};
 		B5ABDAB22C006F41008691F2 = {
 			isa = PBXGroup;
 			children = (
@@ -178,7 +189,7 @@
 		B5ABDAD52C09D292008691F2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B5ABDAC02C006F41008691F2 /* ContentView.swift */,
+				B59A17D22CD3C9B50009F6E6 /* StartScreen */,
 				B5DDC1262C173D8900F3E4A6 /* ChatView.swift */,
 				B5DDC1282C173DAA00F3E4A6 /* CalendarView.swift */,
 				B530BFCD2C56A100007AE504 /* GifView.swift */,
@@ -349,7 +360,7 @@
 				B5F44B472C6A14DD00386431 /* Diary.swift in Sources */,
 				B530BFCC2C569550007AE504 /* CheckLastMessage.swift in Sources */,
 				B5DDC1232C15DF5700F3E4A6 /* Buttons.swift in Sources */,
-				B5ABDAC12C006F41008691F2 /* ContentView.swift in Sources */,
+				B5ABDAC12C006F41008691F2 /* StartView.swift in Sources */,
 				B5ABDACF2C04913B008691F2 /* UserAPIClient.swift in Sources */,
 				B5DDC1272C173D8900F3E4A6 /* ChatView.swift in Sources */,
 				B5B92A6A2CAC2B88009F5E17 /* KeyboardResponder.swift in Sources */,
@@ -363,6 +374,7 @@
 				B5F44B4D2C6DC73100386431 /* FSCalendarView.swift in Sources */,
 				B530BFCE2C56A101007AE504 /* GifView.swift in Sources */,
 				B5F44B452C68DA1300386431 /* DatePosition.swift in Sources */,
+				B59A17D42CD3CF060009F6E6 /* StartViewDecoration.swift in Sources */,
 				B5C1CF982C3AE5FC00A35AC3 /* Message.swift in Sources */,
 				B55FE5F02CCA4759007F9C49 /* ChatBotAPIClient.swift in Sources */,
 			);
@@ -501,7 +513,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChatBotDiary2024/Preview Content\"";
-				DEVELOPMENT_TEAM = 274CZPH4P8;
+				DEVELOPMENT_TEAM = F62Z5CJCVQ;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -533,7 +545,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChatBotDiary2024/Preview Content\"";
-				DEVELOPMENT_TEAM = 274CZPH4P8;
+				DEVELOPMENT_TEAM = F62Z5CJCVQ;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;

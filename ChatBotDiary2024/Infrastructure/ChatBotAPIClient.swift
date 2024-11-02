@@ -20,58 +20,46 @@ class ChatBotAPIClient {
         self.apiUrl = "https://api.openai.com/v1/chat/completions"
     }
     
-    // ChatGPTAPIにメッセージを送受信するメソッド
-    func sendMessageChatGPT(messages: [[String: String]],isSixMessage: Bool, completion: @escaping ([[String: String]]?) -> Void) {
-        var responseMessages: [[String: String]] = []
-        
+    // URLSessionによるAPIの実装
+    func sendMessageGPT(messages: [[String: String]], isSixMessage: Bool) async throws -> [[String: String]]? {
         var mutableMessages = messages
         
         if isSixMessage {
             let message = ["role": "user", "content": "日記にして"]
             mutableMessages.append(message)
-            print(mutableMessages)
         }
         
-        let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(apiKey)",
-            "Content-Type": "application/json"
-        ]
+        // リクエストの準備
+        guard let url = URL(string: apiUrl) else {
+            throw NSError(domain: "Invalid URL", code: -1, userInfo: nil)
+        }
         
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // Jsonボディの設定
         let parameters: [String: Any] = [
             "model": "gpt-4",
             "messages": mutableMessages
         ]
+        request.httpBody = try JSONSerialization.data(withJSONObject: parameters)
         
-        AF.request(apiUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseData { response in
-            switch response.result {
-            case .success(let data):
-                do {
-                    if let chatGPTResponse = try? JSONDecoder().decode(ChatGPT.self, from: data) {
-                        print(chatGPTResponse)
-                        if let firstChoice = chatGPTResponse.choices.first {
-                            let content = firstChoice.message.content
-                            // レスポンスメッセージを追加
-                            responseMessages.append(["role": "assistant", "content": content])
-                            
-                            completion(responseMessages)
-                        } else {
-                            completion(nil)
-                        }
-                    } else if let apiError = try? JSONDecoder().decode(APIError.self, from: data) {
-                        print("API Error: \(apiError.error.message)")
-                        completion(nil)
-                    } else {
-                        print("Unexpected data format")
-                        completion(nil)
-                    }
-                } catch {
-                    print("Decoding Error: \(error)")
-                    completion(nil)
-                }
-            case .failure(let error):
-                print("Error: \(error)")
-                completion(nil)
-            }
+        // 非同期リクエスト
+        let (data, _) = try await URLSession.shared.data(for: request)
+        
+        // レスポンスをデコード
+        if let chatGPTResponse = try? JSONDecoder().decode(ChatGPT.self, from: data),
+           let firstChoice = chatGPTResponse.choices.first {
+            let content = firstChoice.message.content
+            return [["role": "assistant", "content": content]]
+        } else if let apiError = try? JSONDecoder().decode(APIError.self, from: data) {
+            print("API Error: \(apiError.error.message)")
+            throw NSError(domain: "APIError", code: -1, userInfo: [NSLocalizedDescriptionKey: apiError.error.message])
+        } else {
+            print("Unexpected data format")
+            return nil
         }
     }
 }
