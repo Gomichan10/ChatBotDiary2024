@@ -16,6 +16,11 @@ pod 'SwiftyGif'
 pod 'PromisesObjC'
 pod 'FSCalendar'
 
+# Cocoapods-Keys plugin for API key management
+plugin 'cocoapods-keys', {
+  :project => "ChatBotDiary2024",
+  :keys => ["OpenAIAPIKey"]
+}
 
 end
 

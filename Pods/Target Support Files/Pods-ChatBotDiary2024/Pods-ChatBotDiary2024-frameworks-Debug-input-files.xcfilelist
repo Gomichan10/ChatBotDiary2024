@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-ChatBotDiary2024/Pods-ChatBotDiary2024-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Keys-framework/Keys.framework
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework
 ${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework

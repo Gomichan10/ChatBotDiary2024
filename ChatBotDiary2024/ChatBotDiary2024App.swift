@@ -22,7 +22,7 @@ struct ChatBotDiary2024App: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartView()
         }
     }
 }

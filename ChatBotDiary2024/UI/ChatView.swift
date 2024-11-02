@@ -46,15 +46,28 @@ struct ChatView: View {
     
     @FocusState private var focusedField: Field?
     
+    @ObservedObject private var keyboard = KeyboardResponder()
+    
     @State private var chatTextField: String = ""
     @State private var conversationID: String = ""
     @State private var isMessageEnd: Bool = false
     @State private var isLoading = false
     @State private var isShowAlert = false
     @State private var isSuccses = false
-    @State private var shouldNavigation = false
     @State private var isSixMessage = false
-    @State private var chat: [Message] = [Message(id: UUID().uuidString, message: "これから日記を作るよ！どんなことがあったのか教えてね！", isUser: "assistant")]
+    @State private var isLastMessage = false
+    @State private var chat: [Message] = [
+        Message(
+            id: UUID().uuidString,
+            message: chatPrompt,
+            isUser: "system"
+        ),
+        Message(
+            id: UUID().uuidString,
+            message: "これから日記を作るよ！どんなことがあったのか教えてね！",
+            isUser: "assistant"
+        )
+    ]
     
     // プロンプトを設定
     @State var messages = [[
@@ -64,49 +77,51 @@ struct ChatView: View {
     
     var body: some View {
         NavigationView {
-            VStack (spacing: 0){
-                messageArea
-                    .overlay (
-                        navigationArea
-                        
-                        ,alignment: .top
-                    )
-                    .overlay(
-                        Group {
-                            if isShowAlert {
-                                if isSuccses {
-                                    AnyView(
-                                        SuccsesAlertView(
-                                            onCancel: {
-                                                messages = [[
-                                                    "role": "system",
-                                                    "content": chatPrompt
-                                                ]]
-                                                chat = [Message(id: UUID().uuidString, message: "これから日記を作るよ！どんなことがあったのか教えてね！", isUser: "assistant")]
-                                                withAnimation { // アニメーションでフェードアウト
+            GeometryReader { geometry in
+                VStack (spacing: 0){
+                    messageArea
+                        .overlay (
+                            navigationArea
+                            
+                            ,alignment: .top
+                        )
+                        .overlay(
+                            Group {
+                                if isShowAlert {
+                                    if isSuccses {
+                                        AnyView(
+                                            SuccsesAlertView(
+                                                onCancel: {
+                                                    messages = [[
+                                                        "role": "system",
+                                                        "content": chatPrompt
+                                                    ]]
+                                                    chat = [Message(id: UUID().uuidString, message: "これから日記を作るよ！どんなことがあったのか教えてね！", isUser: "assistant")]
+                                                    withAnimation { // アニメーションでフェードアウト
+                                                        isShowAlert = false
+                                                    }
+                                                }
+                                            )
+                                            .opacity(isShowAlert ? 1 : 0)
+                                            .animation(.easeInOut(duration: 0.3), value: isShowAlert)
+                                        )
+                                    } else {
+                                        AnyView(
+                                            FailureAlertView(
+                                                onRetry: {
                                                     isShowAlert = false
                                                 }
-                                            }
+                                            )
                                         )
-                                        .opacity(isShowAlert ? 1 : 0)
-                                        .animation(.easeInOut(duration: 0.3), value: isShowAlert)
-                                    )
+                                    }
                                 } else {
-                                    AnyView(
-                                        FailureAlertView(
-                                            onRetry: {
-                                                isShowAlert = false
-                                            }
-                                        )
-                                    )
+                                    EmptyView() // アラートが表示されていない場合は空のビューを表示
                                 }
-                            } else {
-                                EmptyView() // アラートが表示されていない場合は空のビューを表示
                             }
-                        }
-                        , alignment: .center
-                    )
-                inputArea
+                            , alignment: .center
+                        )
+                    inputArea
+                }
             }
         }
     }
@@ -169,6 +184,10 @@ extension ChatView {
                                             .bold()
                                             .foregroundColor(Color("DiaryAddColor"))
                                             .padding()
+                                            .onAppear{
+                                                // メッセージがラストだったらメッセージを送れないようにする
+                                                isLastMessage = true
+                                            }
                                         }
                                     }
                                     .background(Color("white_black"))
@@ -176,9 +195,10 @@ extension ChatView {
                                     
                                     Spacer()
                                 }
+                                .padding(.bottom)
                             }
                             
-                        } else {
+                        } else if chat.isUser == "user" {
                             // ユーザのメッセージだった場合
                             HStack (alignment: .top){
                                 Spacer()
@@ -194,17 +214,22 @@ extension ChatView {
                                     .frame(width: 50, height: 50)
                                     .clipShape(Circle())
                             }
+                            .padding(.bottom)
                         }
                     }
                 }
                 .padding(.horizontal)
                 .padding(.top, 72)
-                .padding(.bottom, 20)
             }
             .frame(maxWidth: .infinity)
             .background(Color("ChatBackground"))
             .onTapGesture {
                 focusedField = nil
+            }
+            .onAppear {
+                if let lastMessage = chat.last {
+                    proxy.scrollTo(lastMessage.id, anchor: .bottom)
+                }
             }
             .onChange(of: chat) {
                 withAnimation {
@@ -255,56 +280,56 @@ extension ChatView {
                 .foregroundColor(.primary)
                 .focused($focusedField, equals: .inputField)
             Button(action: {
-                
                 // ロード中のUIを表示
                 isLoading = true
                 
                 // キーボードをしまう
                 focusedField = nil
                 
-                if !chatTextField.isEmpty {
-                    if messages.count >= 11 {
+                if !chatTextField.isEmpty && !isLastMessage {
+                    if chat.filter({$0.isUser == "user"}).count >= 6 {
                         isSixMessage = true
                     }
-                    let message = Message(id: UUID().uuidString, message: chatTextField, isUser: "user")
-                    chat.append(message)
-                    messages.append(["role": "user", "content": chatTextField])
+                    
+                    // ユーザーメッセージを追加
+                    let userMessage = Message(id: UUID().uuidString, message: chatTextField, isUser: "user")
+                    chat.append(userMessage)
+                    
                     chatTextField = ""
                     
+                    // ロードメッセージを表示
                     let loadingMessage = Message(id: UUID().uuidString, message: "", isUser: "assistant", isLoading: true)
                     chat.append(loadingMessage)
                     
-                    // ChatGPTのAPIにメッセージを送信
-                    ChatBotAPIClient().sendMessageChatGPT(messages: messages, isSixMessage: isSixMessage) { result in
-                        if let result = result {
-                            messages.append(contentsOf: result)
-                            print(messages)
-                            
-                            // roleがuserのメッセージを抽出
-                            let responseMessage = result.filter { $0["role"] == "assistant" }
-                            
-                            for (_ , massage) in responseMessage.enumerated() {
-                                if let content = massage["content"] {
-                                    // レスポンスで帰ってきたメッセージをchatに追加
-                                    var message = Message(id: UUID().uuidString, message: content, isUser: "assistant")
-                                    // 日記を作成したメッセージにボタンを追加
-                                    if checkLastMessage(message: content) {
-                                        message.showDiaryButton = true
+                    let messagesList = chat.map { ["role": $0.isUser, "content": $0.message] }
+                    
+                    Task {
+                        do {
+                            if let result = try await ChatBotAPIClient().sendMessageGPT(messages: messagesList, isSixMessage: isSixMessage) {
+                                for (_, message) in result.enumerated() {
+                                    if let content = message["content"] {
+                                        var assistantMessage = Message(id: UUID().uuidString, message: content, isUser: "assistant")
+                                        if checkLastMessage(message: content) {
+                                            assistantMessage.showDiaryButton = true
+                                        }
+                                        chat.removeLast()
+                                        chat.append(assistantMessage)
+                                        print(chat)
+                                        isLoading = false
                                     }
-                                    chat.removeLast()
-                                    chat.append(message)
-                                    isLoading = false
                                 }
+                            } else {
+                                print("Error: No response received.")
                             }
-                        } else {
-                            print("error")
+                        } catch {
+                            print("Error: \(error)")
                         }
                     }
                 }
             }, label: {
                 Image(systemName: "paperplane.fill")
                     .resizable()
-                    .foregroundColor(chatTextField.isEmpty ? .gray.opacity(0.4) : Color("LaunchScreenBackGround"))
+                    .foregroundColor(chatTextField.isEmpty || isLastMessage ? .gray.opacity(0.4) : Color("LaunchScreenBackGround"))
                     .frame(width: 20, height: 20)
                     .padding(.horizontal)
             })
